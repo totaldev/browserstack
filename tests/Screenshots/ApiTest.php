@@ -36,7 +36,7 @@ class ApiTest extends PHPUnit_Framework_TestCase
 
     public function testIsbrowserstackAccessable()
     {
-        $response = self::$browserstackApi->isbrowserstackAccessible();
+        $response = self::$browserstackApi->isBrowserstackAccessible();
 
         $result = false;
 

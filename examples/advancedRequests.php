@@ -17,10 +17,10 @@ $api = new Api(BROWSERSTACK_ACCOUNT, BROWSERSTACK_PASSWORD);
 
 $request = new Request();
 $request->url = 'http://vrer.ru';
-$request->macRes = '1920x1080';
-$request->winRes = '1920x1080';
+$request->mac_res = '1920x1080';
+$request->win_res = '1920x1080';
 $request->quality = 'Original';
-$request->waitTime = 10;
+$request->wait_time = 10;
 $request->orientation = 'landscape';
 
 $request->addBrowser('ios', '8.0', 'Mobile Safari', null, 'iPhone 6');

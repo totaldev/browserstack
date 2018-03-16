@@ -1,6 +1,6 @@
 <?php
 
-namespace totaldev\browserstack\Screenshots;
+namespace totaldev\browserstack\screenshots;
 
 /**
  * Class Response

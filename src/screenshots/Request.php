@@ -1,6 +1,6 @@
 <?php
 
-namespace totaldev\browserstack\Screenshots;
+namespace totaldev\browserstack\screenshots;
 
 /**
  * Class Request
@@ -26,7 +26,7 @@ class Request
      *
      * @var string
      */
-    public $callbackUrl = '';
+    public $callback_url = '';
     public $device;
     /**
      * Required if the page is local and that a Local Testing connection has been set up.
@@ -40,7 +40,7 @@ class Request
      *
      * @var string
      */
-    public $macRes = '';
+    public $mac_res = '';
     /**
      * Optional parameter that is needed only for Screenshots on mobile devices
      * Possible values: portrait, landscape
@@ -67,14 +67,14 @@ class Request
      *
      * @var int
      */
-    public $waitTime = 2;
+    public $wait_time = 2;
     /**
      * The Resolution screenshots on Windows-based systems are generated
      * Values: 1024x768, 1280x1024
      *
      * @var string
      */
-    public $winRes = '';
+    public $win_res = '';
 
     /**
      * Short-hand function to build a request with a single browser/OS combination

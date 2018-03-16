@@ -1,6 +1,6 @@
 <?php
 
-namespace totaldev\browserstack\Screenshots;
+namespace totaldev\browserstack\screenshots;
 
 use totaldev\browserstack\screenshots\response\Base;
 use totaldev\browserstack\screenshots\response\ScreenshotsResponse;
@@ -25,7 +25,7 @@ class Api
      *
      * @var bool
      */
-    protected $debug = false;
+    public $debug = false;
     /**
      * The HTTP Headers used for the requests
      *
@@ -99,7 +99,7 @@ class Api
      *
      * @return array
      */
-    public function isbrowserstackAccessible()
+    public function isBrowserstackAccessible()
     {
         $message = null;
         $headers = get_headers(self::API_BASE_URL);
