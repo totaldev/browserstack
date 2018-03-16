@@ -3,14 +3,14 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 /*
- * This a simple example how to get a list of browsers currently supported by Browserstack
+ * This a simple example how to get a list of browsers currently supported by browserstack
  * The given credentials are actually working for that method.
  *
  */
 
-use Alexschwarz89\Browserstack\Screenshots\Api;
+use totaldev\browserstack\screenshots\Api;
 
-$api            = new Api('', '');
-$browserList    = $api->getBrowsers();
+$api = new Api('', '');
+$browserList = $api->getBrowsers();
 
-var_dump( $browserList );
+var_dump($browserList);

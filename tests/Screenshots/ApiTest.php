@@ -1,7 +1,7 @@
 <?php
 
-use \Alexschwarz89\Browserstack\Screenshots\Api;
-use \Alexschwarz89\Browserstack\Screenshots\Request;
+use totaldev\browserstack\screenshots\Api;
+use totaldev\browserstack\screenshots\Request;
 
 class ApiTest extends PHPUnit_Framework_TestCase
 {
@@ -18,7 +18,7 @@ class ApiTest extends PHPUnit_Framework_TestCase
 
     public function testConstruct()
     {
-        $this->assertInstanceOf('\Alexschwarz89\Browserstack\Screenshots\Api', self::$browserstackApi);
+        $this->assertInstanceOf('\totaldev\browserstack\screenshots\Api', self::$browserstackApi);
     }
 
     public function testGetBrowsers()
@@ -26,12 +26,25 @@ class ApiTest extends PHPUnit_Framework_TestCase
         $response = self::$browserstackApi->getBrowsers();
 
         // Check if we have a valid JSON response
-        $this->assertInternalType('array', $response );
+        $this->assertInternalType('array', $response);
     }
 
     public function testGetJobStatus()
     {
-        $this->assertInstanceOf('Alexschwarz89\Browserstack\Screenshots\Response\ScreenshotsResponse', self::$browserstackApi->getJobStatus('123'));
+        $this->assertInstanceOf('totaldev\browserstack\screenshots\response\ScreenshotsResponse', self::$browserstackApi->getJobStatus('123'));
+    }
+
+    public function testIsbrowserstackAccessable()
+    {
+        $response = self::$browserstackApi->isbrowserstackAccessible();
+
+        $result = false;
+
+        if (is_array($response) && (isset($response['success']) || isset($response['errors']))) {
+            $result = true;
+        }
+
+        $this->assertTrue($result);
     }
 
     public function testSendRequest()
@@ -44,27 +57,13 @@ class ApiTest extends PHPUnit_Framework_TestCase
             '11.0'
         );
 
-        $this->assertInstanceOf('Alexschwarz89\Browserstack\Screenshots\Request', $request);
+        $this->assertInstanceOf('totaldev\browserstack\screenshots\Request', $request);
 
-        $response = self::$browserstackApi->sendRequest( $request );
+        $response = self::$browserstackApi->sendRequest($request);
 
-        $this->assertInstanceOf('Alexschwarz89\Browserstack\Screenshots\Response\ScreenshotsResponse', $response);
-
+        $this->assertInstanceOf('totaldev\browserstack\screenshots\response\ScreenshotsResponse', $response);
 
         return false;
-    }
-
-    public function testIsBrowserstackAccessable()
-    {
-        $response = self::$browserstackApi->isBrowserstackAccessable();
-
-        $result = false;
-
-        if (is_array($response) && (isset($response['success']) || isset($response['errors']))) {
-            $result = true;
-        }
-
-        $this->assertTrue( $result );
     }
 
 

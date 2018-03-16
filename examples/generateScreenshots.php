@@ -10,19 +10,19 @@ require __DIR__ . '/../vendor/autoload.php';
  *
  */
 
-use Alexschwarz89\Browserstack\Screenshots\Api;
-use Alexschwarz89\Browserstack\Screenshots\Request;
+use totaldev\browserstack\screenshots\Api;
+use totaldev\browserstack\screenshots\Request;
 
-const BROWSERSTACK_ACCOUNT   = '';
-const BROWSERSTACK_PASSWORD  = '';
+const BROWSERSTACK_ACCOUNT = '';
+const BROWSERSTACK_PASSWORD = '';
 
-$api    = new Api(BROWSERSTACK_ACCOUNT, BROWSERSTACK_PASSWORD);
+$api = new Api(BROWSERSTACK_ACCOUNT, BROWSERSTACK_PASSWORD);
 
 // Short-hand Notation
-$request    = Request::buildRequest('http://www.example.org', 'Windows', '8.1', 'ie', '11.0');
+$request = Request::buildRequest('http://vrer.ru', 'Windows', '8.1', 'ie', '11.0');
 
 // Send the request
-$response   = $api->sendRequest( $request );
+$response = $api->sendRequest($request);
 
 // Query information about the newly created request
 if ($response->isSuccessful) {
@@ -33,7 +33,7 @@ if ($response->isSuccessful) {
         if ($status->isFinished()) {
             // When it's finished, print out the image URLs
             foreach ($status->finishedScreenshots as $screenshot) {
-                print $screenshot->image_url ."\n";
+                print $screenshot->image_url . "\n";
             }
             break;
         }

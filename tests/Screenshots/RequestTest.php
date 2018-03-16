@@ -1,6 +1,6 @@
 <?php
 
-use \Alexschwarz89\Browserstack\Screenshots\Request;
+use totaldev\browserstack\screenshots\Request;
 
 class RequestTest extends PHPUnit_Framework_TestCase
 {
@@ -36,7 +36,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     {
         $request = Request::buildRequest('http://www.example.org', 'Windows', '8.1', 'ie', '11.0');
 
-        $this->assertInstanceOf('\Alexschwarz89\Browserstack\Screenshots\Request', $request);
+        $this->assertInstanceOf('\totaldev\browserstack\screenshots\Request', $request);
 
     }
 }

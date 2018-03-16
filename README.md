@@ -1,8 +1,8 @@
-Browserstack
+browserstack
 ============
-[![Latest Stable Version](https://poser.pugx.org/alexschwarz89/browserstack/v/stable)](https://packagist.org/packages/alexschwarz89/browserstack) [![Total Downloads](https://poser.pugx.org/alexschwarz89/browserstack/downloads)](https://packagist.org/packages/alexschwarz89/browserstack)
+[![Latest Stable Version](https://poser.pugx.org/totaldev/browserstack/v/stable)](https://packagist.org/packages/totaldev/browserstack) [![Total Downloads](https://poser.pugx.org/totaldev/browserstack/downloads)](https://packagist.org/packages/totaldev/browserstack)
 
-An easy-to-use PHP library for the Browserstack Screenshots API. Working examples included.
+An easy-to-use PHP library for the browserstack Screenshots API. Working examples included.
 
 ## Install
 
@@ -11,7 +11,7 @@ Install via [composer](https://getcomposer.org):
 ```javascript
 {
     "require": {
-        "alexschwarz89/browserstack": "0.0.2"
+        "totaldev/browserstack": "0.0.2"
     }
 }
 ```
@@ -23,15 +23,15 @@ Run `composer install`.
 #### Get an array of available browsers
 
 ```php
-use Alexschwarz89\Browserstack\Screenshots\Api;
+use totaldev\browserstack\screenshots\Api;
 $api         = new Api('username', 'password');
 $browserList = $api->getBrowsers();
 ```
 
 #### Generate a screenshot
 ```php
-use Alexschwarz89\Browserstack\Screenshots\Api;
-use Alexschwarz89\Browserstack\Screenshots\Request;
+use totaldev\browserstack\screenshots\Api;
+use totaldev\browserstack\screenshots\Request;
 $api        = new Api('account', 'password');
 $request    = Request::buildRequest('http://www.example.org', 'Windows', '8.1', 'ie', '11.0');
 $response   = $api->sendRequest( $request );
@@ -50,5 +50,5 @@ if ($status->isFinished()) {
 ```
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/alexschwarz89/browserstack/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/totaldev/browserstack/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 

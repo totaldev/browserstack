@@ -1,6 +1,6 @@
 <?php
 
-use \Alexschwarz89\Browserstack\Screenshots\Response;
+use totaldev\browserstack\screenshots\response;
 
 class ResponseTest extends PHPUnit_Framework_TestCase
 {
@@ -8,9 +8,9 @@ class ResponseTest extends PHPUnit_Framework_TestCase
     {
         $response = new Response();
 
-        $myArray = array("foo" => "bar");
+        $myArray = ["foo" => "bar"];
 
-        $response->setApiResponse( json_encode($myArray) );
+        $response->setApiResponse(json_encode($myArray));
 
         $this->assertEquals($myArray, $response->getResponse());
     }
